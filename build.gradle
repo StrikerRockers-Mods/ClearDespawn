@@ -1,21 +1,21 @@
 plugins {
-	id 'fabric-loom' version '0.1.0-SNAPSHOT'
+	id 'fabric-loom' version '0.2.0-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 archivesBaseName = "Clear Despawn"
-version = "1.0.0"
+version = "1.0.2"
 
 minecraft {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:18w49a"
-	mappings "net.fabricmc:yarn:18w49a.10"
-	modCompile "net.fabricmc:fabric-loader:0.2.0.62"
+	minecraft "com.mojang:minecraft:19w06a"
+	mappings "net.fabricmc:yarn:19w06a.4"
+	modCompile "net.fabricmc:fabric-loader:0.3.5.106"	
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modCompile "net.fabricmc:fabric:0.1.0.38"
+	modCompile "net.fabricmc:fabric:0.2.0.92"
 }

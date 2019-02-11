@@ -1,6 +1,6 @@
 package io.github.strikerrocker;
 
-import net.fabricmc.fabric.client.render.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.render.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;

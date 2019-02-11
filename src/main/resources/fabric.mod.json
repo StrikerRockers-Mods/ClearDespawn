@@ -1,7 +1,9 @@
 {
   "id": "cleardespawn",
   "name": "Clear Despawn",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "side": "client",
-  "initializer": "io.github.strikerrocker.ClearDespawn"
+  "initializers": [
+    "io.github.strikerrocker.ClearDespawn"
+  ]
 }
