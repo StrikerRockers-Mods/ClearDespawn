@@ -1,9 +1,19 @@
 {
+  "schemaVersion": 1,
   "id": "cleardespawn",
+  "version": "${version}",
   "name": "Clear Despawn",
-  "version": "1.0.2",
-  "side": "client",
-  "initializers": [
-    "io.github.strikerrocker.ClearDespawn"
-  ]
+  "description": "Makes disappering items disappear faster.",
+  "authors": [
+    "StrikerRocker"
+  ],
+  "contact": {
+    "sources": "https://github.com/StrikerRockers-Mods/ClearDespawn-Fabric"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.strikerrocker.ClearDespawn"
+    ]
+}
 }
