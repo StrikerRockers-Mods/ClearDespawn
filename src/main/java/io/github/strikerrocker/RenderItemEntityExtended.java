@@ -1,11 +1,13 @@
 package io.github.strikerrocker;
 
-import net.fabricmc.fabric.api.client.render.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.ItemEntityRenderer;
 import net.minecraft.client.render.item.ItemRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 
@@ -15,7 +17,7 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
     }
 
     @Override
-    public void method_3996(ItemEntity itemEntity, double v, double v1, double v2, float v3, float v4) {
+    public void render(ItemEntity itemEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         int remainingTime = 6000 - itemEntity.getAge();
 
         if (remainingTime <= 20 * 20) {
@@ -30,9 +32,8 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
                 return;
             }
         }
-        super.method_3996(itemEntity, v, v1, v2, v3, v4);
+        super.render(itemEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
-
 
     public static class Factory implements EntityRendererRegistry.Factory {
 

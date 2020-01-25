@@ -15,5 +15,10 @@
     "main": [
       "io.github.strikerrocker.ClearDespawn"
     ]
-}
+  },
+  "depends": {
+    "fabricloader": ">=0.7.2",
+    "fabric": "*",
+    "minecraft": "1.15.x"
+  }
 }
