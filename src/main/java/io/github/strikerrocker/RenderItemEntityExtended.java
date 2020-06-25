@@ -20,15 +20,12 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
     public void render(ItemEntity itemEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         int remainingTime = 6000 - itemEntity.getAge();
 
-        if (remainingTime <= 20 * 20) {
+        if (remainingTime <= 20 * ConfigurationHandler.getFlashStartTime()) {
+            int flashFactor = remainingTime / 20;
+            if (flashFactor < 2) { flashFactor = 2; };
+            if (flashFactor > 20) { flashFactor = 20; }
 
-            if (true) {
-                int flashFactor = Math.max(2, remainingTime / 20);
-
-                if (remainingTime % (flashFactor) < 0.5f * flashFactor) {
-                    return;
-                }
-            } else if (remainingTime % 20 < 10) {
+            if (remainingTime % flashFactor < flashFactor / 2) {
                 return;
             }
         }

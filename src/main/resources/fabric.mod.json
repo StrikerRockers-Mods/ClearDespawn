@@ -1,24 +1,30 @@
 {
-  "schemaVersion": 1,
-  "id": "cleardespawn",
-  "version": "${version}",
-  "name": "Clear Despawn",
-  "description": "Makes disappering items disappear faster.",
-  "authors": [
-    "StrikerRocker"
-  ],
-  "contact": {
-    "sources": "https://github.com/StrikerRockers-Mods/ClearDespawn-Fabric"
-  },
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "io.github.strikerrocker.ClearDespawn"
-    ]
-  },
-  "depends": {
-    "fabricloader": ">=0.7.2",
-    "fabric": "*",
-    "minecraft": "1.15.x"
-  }
+    "schemaVersion": 1,
+    "id": "cleardespawn",
+    "version": "${version}",
+    "environment": "client",
+    "entrypoints": {
+        "client": [ "io.github.strikerrocker.ClearDespawn" ],
+        "modmenu": [ "io.github.strikerrocker.MMConfigurationHandler" ]
+    },
+    "custom": {
+        "modmenu:clientsideOnly": true
+    },
+    "depends": {
+        "fabricloader": ">=0.7.2",
+        "fabric": "*",
+        "minecraft": "1.16.x"
+    },
+    "recommends": {
+        "modmenu" : "*"
+    },
+    "name": "Clear Despawn",
+    "description": "Makes disappering items flash to warn players to pick them up.",
+    "icon": "icon.png",
+    "authors": [ "StrikerRocker", "Giselbaer" ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/clear-despawn-fabric",
+        "sources": "https://github.com/gbl/ClearDespawn-Fabric",
+        "issues": "https://github.com/gbl/ClearDespawn-Fabric/issues"
+    }
 }
