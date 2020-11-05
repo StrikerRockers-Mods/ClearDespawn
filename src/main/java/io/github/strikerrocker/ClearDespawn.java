@@ -1,5 +1,6 @@
 package io.github.strikerrocker;
 
+import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
 import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
@@ -15,6 +16,7 @@ public class ClearDespawn implements ClientModInitializer {
         ConfigurationHandler confHandler = ConfigurationHandler.getInstance();
         ConfigurationProvider.register(MODNAME, confHandler);
         confHandler.load(ConfigurationProvider.getSuggestedFile(MODID));
+        CrowdinTranslate.downloadTranslations(MODID);
         
         EntityRendererRegistry.INSTANCE.register(EntityType.ITEM, new RenderItemEntityExtended.Factory());
     }
