@@ -1,19 +1,16 @@
 package io.github.strikerrocker;
 
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.ItemEntityRenderer;
-import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 
 public class RenderItemEntityExtended extends ItemEntityRenderer {
-    public RenderItemEntityExtended(EntityRenderDispatcher entityRenderDispatcher, ItemRenderer itemRenderer) {
-        super(entityRenderDispatcher, itemRenderer);
+    public RenderItemEntityExtended(EntityRendererFactory.Context context) {
+        super(context);
     }
 
     @Override
@@ -32,11 +29,11 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
         super.render(itemEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
 
-    public static class Factory implements EntityRendererRegistry.Factory {
+    public static class Factory implements EntityRendererFactory {
 
         @Override
-        public EntityRenderer<? extends Entity> create(EntityRenderDispatcher entityRenderDispatcher, EntityRendererRegistry.Context context) {
-            return new RenderItemEntityExtended(entityRenderDispatcher, MinecraftClient.getInstance().getItemRenderer());
+        public EntityRenderer<? extends Entity> create(EntityRendererFactory.Context context) {
+            return new RenderItemEntityExtended(context);
         }
     }
 }
