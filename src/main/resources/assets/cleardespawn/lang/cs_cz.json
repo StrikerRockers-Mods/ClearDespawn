@@ -1,4 +1,4 @@
 {
-    "cleardespawn.config.timeleft": "Blink start time, in seconds",
-    "cleardespawn.config.tt.timeleft": "Items will start blinking when they have less than this seconds to despawn"
+    "cleardespawn.config.timeleft": "Čas začátku blikání, v sekundách",
+    "cleardespawn.config.tt.timeleft": "Itemy začnou blikat, pokud mají k odstranění méně než tento čas"
 }
