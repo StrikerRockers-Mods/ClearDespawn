@@ -1,4 +1,4 @@
 {
-    "cleardespawn.config.timeleft": "Blink start time, in seconds",
-    "cleardespawn.config.tt.timeleft": "Items will start blinking when they have less than this seconds to despawn"
+    "cleardespawn.config.timeleft": "Czas rozpoczęcia migania, w sekundach",
+    "cleardespawn.config.tt.timeleft": "Przedmioty zaczną migać, kiedy pozostanie im mniej niż tyle sekund do zniknięcia"
 }
