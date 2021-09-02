@@ -12,101 +12,54 @@ buildscript {
 
 plugins {
     id 'fabric-loom' version '0.8-SNAPSHOT'
-    id "com.modrinth.minotaur" version "1.1.0"
-    id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
 apply plugin: 'de.guntram.mcmod.crowdin-translate'
 crowdintranslate.crowdinProjectName = 'cleardespawn'
 
 repositories {
-        maven {
-                url = "https://maven.fabricmc.net/"
-        }
-	maven {
-		url = "https://minecraft.guntram.de/maven/"
-	}
-	maven {
-		url = "https://maven.terraformersmc.com/releases/"
-	}
+    maven { url = "https://maven.fabricmc.net/" }
+    maven { url = "https://minecraft.guntram.de/maven/" }
+    maven { url = "https://maven.terraformersmc.com/releases/" }
 }
 
-sourceCompatibility = 16
-targetCompatibility = 16
-
-ext.Versions = new Properties()
-Versions.load(file("Versionfiles/mcversion-1.17.1.properties").newReader())
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = "cleardespawn"
 ext.projectVersion = '1.1.1'
-
-version = "${Versions['minecraft_version']}-fabric${Versions['fabric_versiononly']}-${project.projectVersion}"
-
-minecraft {
-	refmapName = "cleardespawn-refmap.json";
-}
+version = "${project.minecraft_version}-${project.mod_version}"
 
 processResources {
     inputs.property "version", project.version
-
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
 }
 
 dependencies {
-    minecraft  "com.mojang:minecraft:${Versions['minecraft_version']}"
-    mappings   "net.fabricmc:yarn:${Versions['yarn_mappings']}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${Versions['loader_version']}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${Versions['fabric_version']}"
-    modImplementation "com.terraformersmc:modmenu:${Versions['modmenu_version']}"
-    modImplementation "de.guntram.mcmod:GBfabrictools:${Versions['gbfabrictools_version']}"
-    include    "de.guntram.mcmod:GBfabrictools:${Versions['gbfabrictools_version']}"    
-    modImplementation "de.guntram.mcmod:crowdin-translate:${Versions['crowdintranslate_version']}"
-    include "de.guntram.mcmod:crowdin-translate:${Versions['crowdintranslate_version']}"
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+    modImplementation "de.guntram.mcmod:crowdin-translate:${project.crowdintranslate_version}"
+    include "de.guntram.mcmod:crowdin-translate:${project.crowdintranslate_version}"
+    modImplementation "de.guntram.mcmod:GBfabrictools:${project.gbfabrictools_version}"
+    include "de.guntram.mcmod:GBfabrictools:${project.gbfabrictools_version}"
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 // if it is present.
 // If you remove this task, sources will not be generated.
 task sourcesJar(type: Jar, dependsOn: classes) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
+    classifier = 'sources'
+    from sourceSets.main.allSource
 }
 
 jar {
-        from "LICENSE"
+    from "LICENSE"
 }
 
 build {
-        dependsOn downloadTranslations
-}
-
-import com.modrinth.minotaur.TaskModrinthUpload
-
-task publishModrinth (type: TaskModrinthUpload){
-
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = 'yoJJjRRE'
-    versionNumber = project.version
-    versionName = project.archivesBaseName
-    releaseType = 'release'
-    uploadFile = remapJar // This is the java jar task
-    addGameVersion("${Versions['minecraft_version']}")
-    addLoader('fabric')
-}
-
-curseforge {
-    apiKey = System.getenv("CURSEFORGE_TOKEN") ?: "0"
-    project {
-        id = '308793'
-        releaseType = 'release'
-        addGameVersion("${Versions['minecraft_version']}")
-        addGameVersion("Java "+targetCompatibility)
-        addGameVersion("Fabric")
-        mainArtifact(remapJar)
-    }
-    options {
-        forgeGradleIntegration = false
-    }
+    dependsOn downloadTranslations
 }
