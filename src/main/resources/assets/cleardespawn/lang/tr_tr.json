@@ -1,0 +1,4 @@
+{
+    "cleardespawn.config.timeleft": "Yavaşça kaybolmanın başlangıç süresi (saniye olarak)",
+    "cleardespawn.config.tt.timeleft": "Kaybolmasına dek bu saniyeden az vakit kaldığında eşyalar yavaşça gözüküp kaybolmaya başlayacak"
+}

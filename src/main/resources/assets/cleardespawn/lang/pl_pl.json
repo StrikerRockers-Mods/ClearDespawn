@@ -1,0 +1,4 @@
+{
+    "cleardespawn.config.timeleft": "Czas rozpoczęcia migania, w sekundach",
+    "cleardespawn.config.tt.timeleft": "Przedmioty zaczną migać, kiedy pozostanie im mniej niż tyle sekund do zniknięcia"
+}

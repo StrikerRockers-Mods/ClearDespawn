@@ -1,0 +1,4 @@
+{
+    "cleardespawn.config.timeleft": "Čas začátku blikání, v sekundách",
+    "cleardespawn.config.tt.timeleft": "Itemy začnou blikat, pokud mají k odstranění méně než tento čas"
+}
