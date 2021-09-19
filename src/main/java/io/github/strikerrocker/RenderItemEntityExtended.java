@@ -15,7 +15,7 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
 
     @Override
     public void render(ItemEntity itemEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        int remainingTime = 6000 - itemEntity.getItemAge();
+        int remainingTime = ConfigurationHandler.getDespawnTime() - itemEntity.getItemAge();
 
         if (remainingTime <= 20 * ConfigurationHandler.getFlashStartTime()) {
             int flashFactor = remainingTime / 20;
