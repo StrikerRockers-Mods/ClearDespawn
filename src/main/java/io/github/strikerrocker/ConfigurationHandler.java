@@ -12,6 +12,7 @@ public class ConfigurationHandler implements ModConfigurationHandler {
     private Configuration config;
 
     private int flashStartTime;
+    private int despawnTime;
 
     public static ConfigurationHandler getInstance() {
         if (instance == null) instance = new ConfigurationHandler();
@@ -20,6 +21,10 @@ public class ConfigurationHandler implements ModConfigurationHandler {
 
     public static int getFlashStartTime() {
         return getInstance().flashStartTime;
+    }
+
+    public static int getDespawnTime() {
+        return getInstance().despawnTime;
     }
 
     public void load(final File configFile) {
@@ -46,7 +51,8 @@ public class ConfigurationHandler implements ModConfigurationHandler {
     private void loadConfig() {
         flashStartTime = config.getInt("cleardespawn.config.timeleft",
                 Configuration.CATEGORY_CLIENT, 20, 0, 300, "cleardespawn.config.tt.timeleft");
-
+        despawnTime = config.getInt("cleardespawn.config.despawntime",
+                Configuration.CATEGORY_CLIENT, 6000, 0, 36000, "cleardespawn.config.tt.despawntime");
         if (config.hasChanged())
             config.save();
     }
