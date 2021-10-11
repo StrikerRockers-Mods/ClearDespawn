@@ -1,4 +1,6 @@
 {
   "cleardespawn.config.timeleft": "闪烁开始时间（单位：秒）",
-  "cleardespawn.config.tt.timeleft": "物品将在剩余时间少于指定的秒数时开始闪烁"
+  "cleardespawn.config.tt.timeleft": "物品将在剩余时间少于指定的秒数时开始闪烁",
+  "cleardespawn.config.despawntime": "Time until dropped items despawn",
+  "cleardespawn.config.tt.despawntime": "Change this if you're playing on a server that doesn't use the default 5 minutes"
 }

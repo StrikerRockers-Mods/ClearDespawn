@@ -1,4 +1,6 @@
 {
   "cleardespawn.config.timeleft": "Czas rozpoczęcia migania, w sekundach",
-  "cleardespawn.config.tt.timeleft": "Przedmioty zaczną migać, kiedy pozostanie im mniej niż tyle sekund do zniknięcia"
+  "cleardespawn.config.tt.timeleft": "Przedmioty zaczną migać, kiedy pozostanie im mniej niż tyle sekund do zniknięcia",
+  "cleardespawn.config.despawntime": "Time until dropped items despawn",
+  "cleardespawn.config.tt.despawntime": "Change this if you're playing on a server that doesn't use the default 5 minutes"
 }

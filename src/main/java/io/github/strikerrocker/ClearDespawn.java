@@ -3,7 +3,7 @@ package io.github.strikerrocker;
 import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
 import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.entity.EntityType;
 
 public class ClearDespawn implements ClientModInitializer {
@@ -18,6 +18,6 @@ public class ClearDespawn implements ClientModInitializer {
         confHandler.load(ConfigurationProvider.getSuggestedFile(MODID));
         CrowdinTranslate.downloadTranslations(MODID);
 
-        EntityRendererRegistry.INSTANCE.register(EntityType.ITEM, new RenderItemEntityExtended.Factory());
+        EntityRendererRegistry.register(EntityType.ITEM, new RenderItemEntityExtended.Factory());
     }
 }

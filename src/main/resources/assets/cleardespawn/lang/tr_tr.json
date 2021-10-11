@@ -1,4 +1,6 @@
 {
   "cleardespawn.config.timeleft": "Yavaşça kaybolmanın başlangıç süresi (saniye olarak)",
-  "cleardespawn.config.tt.timeleft": "Kaybolmasına dek bu saniyeden az vakit kaldığında eşyalar yavaşça gözüküp kaybolmaya başlayacak"
+  "cleardespawn.config.tt.timeleft": "Kaybolmasına dek bu saniyeden az vakit kaldığında eşyalar yavaşça gözüküp kaybolmaya başlayacak",
+  "cleardespawn.config.despawntime": "Time until dropped items despawn",
+  "cleardespawn.config.tt.despawntime": "Change this if you're playing on a server that doesn't use the default 5 minutes"
 }

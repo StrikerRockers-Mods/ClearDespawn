@@ -1,4 +1,6 @@
 {
-    "cleardespawn.config.timeleft": "Blinkstartzeit in Sekunden",
-    "cleardespawn.config.tt.timeleft": "Gegenstände fangen soviele Sekunden vor dem Despawnen zu blinken an"
+  "cleardespawn.config.timeleft": "Blinkstartzeit in Sekunden",
+  "cleardespawn.config.tt.timeleft": "Gegenstände fangen soviele Sekunden vor dem Despawnen zu blinken an",
+  "cleardespawn.config.despawntime": "Time until dropped items despawn",
+  "cleardespawn.config.tt.despawntime": "Change this if you're playing on a server that doesn't use the default 5 minutes"
 }

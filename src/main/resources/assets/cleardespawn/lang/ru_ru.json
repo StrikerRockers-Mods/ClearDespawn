@@ -1,4 +1,6 @@
 {
-  "cleardespawn.config.timeleft": "Blink start time, in seconds",
-  "cleardespawn.config.tt.timeleft": "Items will start blinking when they have less than this seconds to despawn"
+  "cleardespawn.config.timeleft": "Начало мерцания, в секундах",
+  "cleardespawn.config.tt.timeleft": "Предметы начнут мерцать, когда останется столько времени до их исчезновения",
+  "cleardespawn.config.despawntime": "Время до исчезновения предметов",
+  "cleardespawn.config.tt.despawntime": "Измените это, если на вашем сервере установлено значение, отличное от 5 минут"
 }
