@@ -1,23 +1,17 @@
 package io.github.strikerrocker;
 
-import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
-import de.guntram.mcmod.fabrictools.ConfigurationProvider;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.entity.EntityType;
+import net.minecraft.world.entity.EntityType;
 
 public class ClearDespawn implements ClientModInitializer {
-
-    public static final String MODNAME = "ClearDespawn";
     public static final String MODID = "cleardespawn";
 
     @Override
     public void onInitializeClient() {
-        ConfigurationHandler confHandler = ConfigurationHandler.getInstance();
-        ConfigurationProvider.register(MODNAME, confHandler);
-        confHandler.load(ConfigurationProvider.getSuggestedFile(MODID));
-        CrowdinTranslate.downloadTranslations(MODID);
-
+        AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
         EntityRendererRegistry.register(EntityType.ITEM, new RenderItemEntityExtended.Factory());
     }
 }

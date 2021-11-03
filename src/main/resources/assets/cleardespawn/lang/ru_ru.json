@@ -1,6 +1,0 @@
-{
-  "cleardespawn.config.timeleft": "Начало мерцания, в секундах",
-  "cleardespawn.config.tt.timeleft": "Предметы начнут мерцать, когда останется столько времени до их исчезновения",
-  "cleardespawn.config.despawntime": "Время до исчезновения предметов",
-  "cleardespawn.config.tt.despawntime": "Измените это, если на вашем сервере установлено значение, отличное от 5 минут"
-}

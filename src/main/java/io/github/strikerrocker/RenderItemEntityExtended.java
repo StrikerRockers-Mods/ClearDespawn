@@ -1,21 +1,21 @@
 package io.github.strikerrocker;
 
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.ItemEntityRenderer;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.ItemEntity;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemEntityRenderer;
+import net.minecraft.world.entity.item.ItemEntity;
 
 public class RenderItemEntityExtended extends ItemEntityRenderer {
-    public RenderItemEntityExtended(EntityRendererFactory.Context context) {
+    public RenderItemEntityExtended(EntityRendererProvider.Context context) {
         super(context);
     }
 
     @Override
-    public void render(ItemEntity itemEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        int remainingTime = ConfigurationHandler.getDespawnTime() - itemEntity.getItemAge();
-        if (remainingTime <= 20 * ConfigurationHandler.getFlashStartTime()) {
+    public void render(ItemEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
+        int remainingTime = ModConfig.despawnTime - entity.getAge();
+        if (remainingTime <= 20 * ModConfig.flashStartTime) {
             int flashFactor = remainingTime / 20;
             if (flashFactor < 2) {
                 flashFactor = 2;
@@ -27,13 +27,12 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
                 return;
             }
         }
-        super.render(itemEntity, f, g, matrixStack, vertexConsumerProvider, i);
+        super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);
     }
 
-    public static class Factory implements EntityRendererFactory<ItemEntity> {
-
+    public static class Factory implements EntityRendererProvider<ItemEntity> {
         @Override
-        public EntityRenderer<ItemEntity> create(EntityRendererFactory.Context context) {
+        public EntityRenderer<ItemEntity> create(Context context) {
             return new RenderItemEntityExtended(context);
         }
     }
