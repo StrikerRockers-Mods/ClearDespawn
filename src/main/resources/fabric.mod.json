@@ -4,12 +4,17 @@
   "version": "${version}",
   "environment": "client",
   "entrypoints": {
-    "client": ["io.github.strikerrocker.ClearDespawn"],
-    "modmenu": ["io.github.strikerrocker.MMConfigurationHandler"]
+    "client": [
+      "io.github.strikerrocker.ClearDespawn"
+    ],
+    "modmenu": [
+      "io.github.strikerrocker.ModMenuIntegration"
+    ]
   },
   "depends": {
-    "fabricloader": ">=0.7.2",
-    "fabric": "*"
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "java": ">=16"
   },
   "recommends": {
     "modmenu": "*"
@@ -17,7 +22,9 @@
   "name": "Clear Despawn",
   "description": "Makes disappearing items flash to warn players to pick them up.",
   "icon": "icon.png",
-  "authors": ["StrikerRocker", "Giselbaer"],
+  "authors": [
+    "StrikerRocker"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/clear-despawn-fabric",
     "sources": "https://github.com/StrikerRockers-Mods/ClearDespawn-Fabric",
