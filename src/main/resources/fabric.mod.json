@@ -14,7 +14,8 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "java": ">=16"
+    "java": ">=16",
+    "cloth-config2": ">=5.0.0"
   },
   "recommends": {
     "modmenu": "*"
