@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.world.entity.EntityType;
 
 public class ClearDespawn implements ClientModInitializer {
-    public static final String MODID = "cleardespawn";
 
     @Override
     public void onInitializeClient() {

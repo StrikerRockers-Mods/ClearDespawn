@@ -1,4 +1,4 @@
 {
-  "text.autoconfig.cleardespawn.option.flashStartTime": "Blinking start time, in seconds",
+  "text.autoconfig.cleardespawn.option.flashStartTime": "Blinking start time before the item despawns, in seconds",
   "text.autoconfig.cleardespawn.option.despawnTime": "Time until items will despawn (Change only if the items in the pack have different time limit)"
 }

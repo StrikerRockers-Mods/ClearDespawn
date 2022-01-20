@@ -14,8 +14,8 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
 
     @Override
     public void render(ItemEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
-        int remainingTime = ModConfig.despawnTime - entity.getAge();
-        if (remainingTime <= 20 * ModConfig.flashStartTime) {
+        int remainingTime = Services.CONFIG_HELPER.getItemDespawnTime() - entity.getAge();
+        if (remainingTime <= 20 * Services.CONFIG_HELPER.getFlashStartTime()) {
             int flashFactor = remainingTime / 20;
             if (flashFactor < 2) {
                 flashFactor = 2;

@@ -1,16 +1,23 @@
-# gradle
-
-.gradle/
-build/
-out/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
 # idea
-
-.idea/
-*.iml
+out
 *.ipr
 *.iws
+*.iml
+.idea/*
+!.idea/scopes
 
-# fabric
+# gradle
+build
+.gradle
 
-run/
+# other
+eclipse
+run

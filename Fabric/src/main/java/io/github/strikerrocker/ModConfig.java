@@ -4,7 +4,7 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name = ClearDespawn.MODID)
+@Config(name = Constants.MOD_ID)
 public class ModConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(max = 300)
     public static int flashStartTime = 20;
