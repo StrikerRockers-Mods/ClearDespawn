@@ -10,4 +10,9 @@ public class ConfigHelper implements IConfigHelper {
     public int getItemDespawnTime() {
         return ModConfig.despawnTime;
     }
+
+    @Override
+    public boolean isUrgentFlashEnabled() {
+        return ModConfig.urgentFlash;
+    }
 }

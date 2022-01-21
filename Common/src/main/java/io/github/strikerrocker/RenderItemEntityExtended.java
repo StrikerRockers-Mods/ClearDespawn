@@ -16,14 +16,12 @@ public class RenderItemEntityExtended extends ItemEntityRenderer {
     public void render(ItemEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
         int remainingTime = Services.CONFIG_HELPER.getItemDespawnTime() - entity.getAge();
         if (remainingTime <= 20 * Services.CONFIG_HELPER.getFlashStartTime()) {
-            int flashFactor = remainingTime / 20;
-            if (flashFactor < 2) {
-                flashFactor = 2;
-            }
-            if (flashFactor > 20) {
-                flashFactor = 20;
-            }
-            if (remainingTime % flashFactor < flashFactor / 2) {
+            if (Services.CONFIG_HELPER.isUrgentFlashEnabled()) {
+                int flashFactor = Math.max(2, remainingTime / 20);
+                if (remainingTime % flashFactor < 0.5f * flashFactor) {
+                    return;
+                }
+            } else if (remainingTime % 20 < 10) {
                 return;
             }
         }

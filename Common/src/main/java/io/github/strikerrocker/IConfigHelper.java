@@ -4,4 +4,6 @@ public interface IConfigHelper {
     int getFlashStartTime();
 
     int getItemDespawnTime();
+
+    boolean isUrgentFlashEnabled();
 }
