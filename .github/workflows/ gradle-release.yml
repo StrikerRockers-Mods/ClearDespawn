@@ -55,11 +55,11 @@ jobs:
         uses: itsmeow/webhook-action@master
         env:
           WEBHOOK_URL: "${{ secrets.DISCORD_WEBHOOK_URL }}"
-          data: '{"embeds":[{"title":"${{ steps.build.outputs.modid }} Release Build","url":"https://github.com/${{ github.repository }}/releases/tag/${{ steps.build.outputs.version }}","description":"Tag: ${{ steps.build.outputs.version }}\nStatus: Successful","color":65280,"author":{"name":"${{ github.event.user.login }}","url":"${{ github.event.user.html_url }}","icon_url":"${{ github.event.user.avatar_url }}"}}]}'
+          data: '{"embeds":[{"title":"${{ steps.build.outputs.modid }} Release Build","url":"https://github.com/${{ github.repository }}/releases/tag/${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}","description":"Tag: ${{ steps.build.outputs.version }}\nStatus: Successful","color":65280,"author":{"name":"${{ github.event.user.login }}","url":"${{ github.event.user.html_url }}","icon_url":"${{ github.event.user.avatar_url }}"}}]}'
       - name: "Build Fail"
         id: build-fail
         uses: itsmeow/webhook-action@master
         if: failure()
         env:
           WEBHOOK_URL: '${{ secrets.DISCORD_WEBHOOK_URL }}\'
-          data: '{"embeds":[{"title":"${{ steps.build.outputs.modid }} Release Build","url":"https://github.com/${{ github.repository }}/releases/tag/${{ steps.build.outputs.version }}","description":"Tag: ${{ steps.build.outputs.version }}\nStatus: Failed","color":16711680,"author":{"name":"${{ github.event.user.login }}","url":"${{ github.event.user.html_url }}","icon_url":"${{ github.event.user.avatar_url }}"}}]}'
+          data: '{"embeds":[{"title":"${{ steps.build.outputs.modid }} Release Build","url":"https://github.com/${{ github.repository }}/releases/tag/${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}","description":"Tag: ${{ steps.build.outputs.version }}\nStatus: Failed","color":16711680,"author":{"name":"${{ github.event.user.login }}","url":"${{ github.event.user.html_url }}","icon_url":"${{ github.event.user.avatar_url }}"}}]}'
