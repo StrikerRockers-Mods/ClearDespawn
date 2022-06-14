@@ -1,28 +1,28 @@
-modLoader="javafml"
-loaderVersion="[40,)"
-license="MIT"
+modLoader = "javafml"
+loaderVersion = "[41,)"
+license = "MIT"
 
 [[mods]]
-modId="cleardespawn"
-version="${file.jarVersion}"
-displayName="ClearDespawn"
+modId = "cleardespawn"
+version = "${file.jarVersion}"
+displayName = "ClearDespawn"
 #updateJSONURL="https://change.me.example.invalid/updates.json"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
-logoFile="icon.png"
-credits="Thanks for IllusiveC4 for making the mod."
-authors="StrikerRocker"
-description='''
+logoFile = "icon.png"
+credits = "Thanks for IllusiveC4 for making the mod."
+authors = "StrikerRocker"
+description = '''
 Flashes the item on ground after a certain amount of time to indicate its going to despawn
 '''
 [[dependencies.cleardespawn]]
-    modId="forge"
-    mandatory=true
-    versionRange="[38,)"
-    ordering="NONE"
-    side="BOTH"
+modId = "forge"
+mandatory = true
+versionRange = "[41,)"
+ordering = "NONE"
+side = "BOTH"
 [[dependencies.cleardespawn]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.18,1.19)"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,1.20)"
+ordering = "NONE"
+side = "BOTH"
