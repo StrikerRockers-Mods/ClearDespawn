@@ -8,9 +8,11 @@ import net.minecraft.world.entity.EntityType;
 
 public class ClearDespawn implements ClientModInitializer {
 
+    public static ModConfig config;
     @Override
     public void onInitializeClient() {
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
+        config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         EntityRendererRegistry.register(EntityType.ITEM, new RenderItemEntityExtended.Factory());
     }
 }
