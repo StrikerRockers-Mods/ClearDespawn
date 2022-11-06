@@ -36,7 +36,9 @@ jobs:
           modrinth-id: yoJJjRRE
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           loaders: forge
+          version: ${{ steps.build.outputs.version }}
           files: "Forge/build/libs/${{ steps.build.outputs.mod_name }}-forge-${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}.jar"
+          name: "${{ steps.build.outputs.mod_name }}-forge-${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}.jar"
       - name: "Publish-Fabric-Curseforge"
         uses: Kir-Antipov/mc-publish@v3.2
         with:
@@ -45,7 +47,9 @@ jobs:
           modrinth-id: yoJJjRRE
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           loaders: fabric
-          files: "Forge/build/libs/${{ steps.build.outputs.mod_name }}-forge-${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}.jar"
+          version: ${{ steps.build.outputs.version }}
+          files: "Fabric/build/libs/${{ steps.build.outputs.mod_name }}-fabric-${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}.jar"
+          name: "${{ steps.build.outputs.mod_name }}-fabric-${{ steps.build.outputs.minecraft_version }}-${{ steps.build.outputs.version }}.jar"
           dependencies: |
             fabric-api | depends | *
             cloth-config | depends | *
