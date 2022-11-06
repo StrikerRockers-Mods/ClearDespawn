@@ -1,4 +1,4 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;

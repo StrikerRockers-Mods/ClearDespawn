@@ -1,4 +1,4 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;

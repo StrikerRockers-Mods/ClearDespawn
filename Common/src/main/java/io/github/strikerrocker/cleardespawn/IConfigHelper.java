@@ -1,4 +1,4 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 public interface IConfigHelper {
     int getFlashStartTime();

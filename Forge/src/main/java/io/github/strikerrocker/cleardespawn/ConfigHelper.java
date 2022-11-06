@@ -1,18 +1,18 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 public class ConfigHelper implements IConfigHelper {
     @Override
     public int getFlashStartTime() {
-        return ClearDespawn.config.flashStartTime;
+        return Config.CLIENT.flashStartTime.get();
     }
 
     @Override
     public int getItemDespawnTime() {
-        return ClearDespawn.config.despawnTime;
+        return Config.CLIENT.despawnTime.get();
     }
 
     @Override
     public boolean isUrgentFlashEnabled() {
-        return ClearDespawn.config.urgentFlash;
+        return Config.CLIENT.urgentFlash.get();
     }
 }

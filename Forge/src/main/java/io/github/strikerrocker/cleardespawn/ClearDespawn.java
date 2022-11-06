@@ -1,4 +1,4 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;

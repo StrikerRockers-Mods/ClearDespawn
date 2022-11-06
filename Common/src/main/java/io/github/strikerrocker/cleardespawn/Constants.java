@@ -1,4 +1,4 @@
-package io.github.strikerrocker;
+package io.github.strikerrocker.cleardespawn;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

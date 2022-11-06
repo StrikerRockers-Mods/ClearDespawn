@@ -5,10 +5,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "io.github.strikerrocker.ClearDespawn"
+      "io.github.strikerrocker.cleardespawn.ClearDespawn"
     ],
     "modmenu": [
-      "io.github.strikerrocker.ModMenuIntegration"
+      "io.github.strikerrocker.cleardespawn.ModMenuIntegration"
     ]
   },
   "depends": {

@@ -9,7 +9,7 @@ displayName = "ClearDespawn"
 #updateJSONURL="https://change.me.example.invalid/updates.json"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
 logoFile = "icon.png"
-credits = "Thanks for IllusiveC4 for making the mod."
+credits = "Thanks for IllusiveC4 for initially making the mod."
 authors = "StrikerRocker"
 description = '''
 Flashes the item on ground after a certain amount of time to indicate its going to despawn
@@ -23,6 +23,6 @@ side = "BOTH"
 [[dependencies.cleardespawn]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19,1.20)"
+versionRange = "[1.19,)"
 ordering = "NONE"
 side = "BOTH"
