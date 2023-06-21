@@ -5,7 +5,7 @@ plugins {
     id 'fabric-loom'
 }
 base {
-    archivesBaseName = "${mod_name}-fabric-${minecraft_version}"
+    archivesName = "${project.mod_name}-fabric-${project.minecraft_version}"
 }
 
 repositories {
@@ -56,7 +56,6 @@ tasks.withType(JavaCompile).configureEach {
 tasks.withType(Javadoc).configureEach {
     source(project(":common").sourceSets.main.allJava)
 }
-
 
 processResources {
     from project(":common").sourceSets.main.resources
