@@ -56,16 +56,16 @@ subprojects {
     }
 }
 
-task setupGithubActions() {
+tasks.register('setupGithubActions') {
     doLast {
         exec {
-            commandLine "echo", "version=${rootProject.version}", ">> $GITHUB_OUTPUT"
+            commandLine "sh", "-c", "echo version=${rootProject.version} >> \$GITHUB_OUTPUT"
         }
         exec {
-            commandLine "echo", "mod_name=${rootProject.mod_name}", ">> $GITHUB_OUTPUT"
+            commandLine "sh", "-c", "echo mod_name=${rootProject.mod_name} >> \$GITHUB_OUTPUT"
         }
         exec {
-            commandLine "echo", "minecraft_version=${rootProject.minecraft_version}", ">> $GITHUB_OUTPUT"
+            commandLine "sh", "-c", "echo minecraft_version=${rootProject.minecraft_version} >> \$GITHUB_OUTPUT"
         }
     }
 }
