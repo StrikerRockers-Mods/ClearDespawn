@@ -1,13 +1,11 @@
 modLoader = "javafml"
-loaderVersion = "[41,)"
+loaderVersion = "[46,)"
 license = "MIT"
 
 [[mods]]
 modId = "cleardespawn"
 version = "${file.jarVersion}"
 displayName = "ClearDespawn"
-#updateJSONURL="https://change.me.example.invalid/updates.json"
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
 logoFile = "icon.png"
 credits = "Thanks for IllusiveC4 for initially making the mod."
 authors = "StrikerRocker"
@@ -17,7 +15,7 @@ Flashes the item on ground after a certain amount of time to indicate its going 
 [[dependencies.cleardespawn]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[46,)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.cleardespawn]]
