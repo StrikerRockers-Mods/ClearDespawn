@@ -7,8 +7,8 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = Constants.MOD_ID)
 public class ModConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(max = 300)
-    public static int flashStartTime = 20;
+    public int flashStartTime = 20;
     @ConfigEntry.BoundedDiscrete(max = 36000)
-    public static int despawnTime = 6000;
-    public static boolean urgentFlash = true;
+    public int despawnTime = 6000;
+    public boolean urgentFlash = true;
 }
