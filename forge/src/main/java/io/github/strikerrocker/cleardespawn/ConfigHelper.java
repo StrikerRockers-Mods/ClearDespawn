@@ -9,11 +9,6 @@ public class ConfigHelper implements IConfigHelper {
     }
 
     @Override
-    public int getItemDespawnTime() {
-        return Config.CLIENT.despawnTime.get();
-    }
-
-    @Override
     public int getItemDespawnTime(ItemEntity entity) {
         return entity.lifespan;
     }
