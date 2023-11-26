@@ -1,0 +1,26 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "cleardespawn"
+version = "${file.jarVersion}"
+displayName = "ClearDespawn"
+logoFile = "icon.png"
+credits = "Thanks for IllusiveC4 for initially making the mod."
+authors = "StrikerRocker"
+description = '''
+Flashes the item on ground after a certain amount of time to indicate its going to despawn
+'''
+[[dependencies.cleardespawn]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[1,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.cleardespawn]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,)"
+ordering = "NONE"
+side = "BOTH"
