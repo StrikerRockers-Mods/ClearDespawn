@@ -1,0 +1,5 @@
+{
+  "text.autoconfig.cleardespawn.option.flashStartTime": "Temps de clignotement avant la disparition de l'objet, en secondes",
+  "text.autoconfig.cleardespawn.option.despawnTime": "Durée avant que les objets disparaissent (changer uniquement si les objets dans le pack ont des limites de temps différentes)",
+  "text.autoconfig.cleardespawn.option.urgentFlash": "Définir sur vrai pour faire clignoter l'objet plus rapidement lorsqu'il se rapproche de la disparition"
+}
